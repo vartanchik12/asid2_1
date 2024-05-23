@@ -179,7 +179,7 @@ public:
 			else {
 				Node<T>* maxinL = getMax(current->left);
 				current->data = maxinL->data;
-				current->right=eraseNode(current->right,key)
+				current->right = eraseNode(current->right, key);
 			}
 		}
 		return current;

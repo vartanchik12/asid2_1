@@ -6,4 +6,5 @@ project(BinTree)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 
-add_executable(main main.cpp "include/bintree.h")
+add_executable(main main.cpp)
+add_executable(tests  tests.cpp)

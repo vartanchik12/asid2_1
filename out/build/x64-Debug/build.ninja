@@ -77,6 +77,43 @@ build main.exe: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles\main.dir\main.cpp.o
   TARGET_IMPLIB = main.lib
   TARGET_PDB = main.pdb
 
+# =============================================================================
+# Object build statements for EXECUTABLE target tests
+
+
+#############################################
+# Order-only phony target for tests
+
+build cmake_object_order_depends_target_tests: phony || CMakeFiles\tests.dir
+
+build CMakeFiles\tests.dir\tests.cpp.obj: CXX_COMPILER__tests_Debug C$:\Users\PCmen\Desktop\aisdlab4\tests.cpp || cmake_object_order_depends_target_tests
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  INCLUDES = -IC:\Users\PCmen\Desktop\aisdlab4\include
+  OBJECT_DIR = CMakeFiles\tests.dir
+  OBJECT_FILE_DIR = CMakeFiles\tests.dir
+  TARGET_COMPILE_PDB = CMakeFiles\tests.dir\
+  TARGET_PDB = tests.pdb
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target tests
+
+
+#############################################
+# Link the executable tests.exe
+
+build tests.exe: CXX_EXECUTABLE_LINKER__tests_Debug CMakeFiles\tests.dir\tests.cpp.obj
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
+  LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
+  LINK_LIBRARIES = kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
+  OBJECT_DIR = CMakeFiles\tests.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_COMPILE_PDB = CMakeFiles\tests.dir\
+  TARGET_FILE = tests.exe
+  TARGET_IMPLIB = tests.lib
+  TARGET_PDB = tests.pdb
+
 
 #############################################
 # Utility command for edit_cache
@@ -105,6 +142,8 @@ build rebuild_cache: phony CMakeFiles\rebuild_cache.util
 
 build main: phony main.exe
 
+build tests: phony tests.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -113,7 +152,7 @@ build main: phony main.exe
 #############################################
 # Folder: C:/Users/PCmen/Desktop/aisdlab4/out/build/x64-Debug
 
-build all: phony main.exe
+build all: phony main.exe tests.exe
 
 # =============================================================================
 # Unknown Build Time Dependencies.
